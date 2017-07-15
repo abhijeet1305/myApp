@@ -21,14 +21,13 @@ public static void main(String[] args) {
     Session session=factory.openSession();  
       
     //creating transaction object  
-    Transaction t=session.beginTransaction();  
-          
+    Transaction t=session.beginTransaction();
     Users user1=new Users();  
-    //user1.setId(115);  
+    user1.setId(2);  
     user1.setUserName("Chinya");  
     user1.setPassword("chinya");  
       
-    session.persist(user1);//persisting the object  
+    session.save(user1);//persisting the object  
       
     t.commit();//transaction is committed  
     session.close();  
